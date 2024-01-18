@@ -1,0 +1,45 @@
+
+
+<h1>Rejoindre le salon</h1>
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>La parole a tous</title>
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const socket = io('http://localhost:3000');
+
+            // Fonction pour rejoindre le salon
+            function rejoindreSalon() {
+                const nomUtilisateur = document.getElementById('nomUtilisateur').value;
+                // Envoyer le nom de l'utilisateur au serveur via une requête AJAX
+                fetch('/rejoindre-salon', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ nomUtilisateur })
+                });
+            }
+
+            // Envoi du client
+            socket.emit('envoyer-depuis-client');
+
+            // Réception du serveur
+            socket.on('reponse-pour-client', (data) => {
+                console.log('Réponse reçue pour reponse-pour-client:', data.message);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>La parole a tous</h1>
+    <form>
+        <input type="text" id="nomUtilisateur" placeholder="Nom d'utilisateur">
+        <button type="button" onclick="rejoindreSalon()">Rejoindre le salon</button>
+    </form>
+</body>
+</html> -->

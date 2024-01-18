@@ -1,0 +1,75 @@
+html
+  head
+    title=titre
+    style.
+      /* Styles CSS */
+      body {
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        height: 100vh;
+      }
+      h1 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+      a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      button[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+      button[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+
+  body
+    .container
+      h1=titre
+      a(href="/plats/ajouter") Retour à la liste
+
+      form(action="/plats/ajouter", method="POST")
+        label(for="name") Nom du plat:
+        input(type="text", name="name", id="name")
+
+        label(for="price") Prix du plat:
+        input(type="text", name="price", id="price")
+
+        button(type="submit") Ajouter le plat

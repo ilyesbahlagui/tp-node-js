@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>La parole a tous</title>
+
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+         
+            const socket = io('http://localhost:3000');
+
+            // Envoi du client 
+            socket.emit('envoyer-depuis-client');
+
+            // Réception du serveur
+            socket.on('reponse-pour-client', (data) => {
+                console.log('Réponse reçue pour reponse-pour-client:', data.message);
+               
+            });
+        });
+
+
+
+    </script>
+</head>
+<body>
+    <h1>La parole a tous </h1>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>La parole à tous</title>
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const socket = io('http://localhost:3000');
+            const pseudo = prompt('Entrez votre pseudo :'); // Demande au client de saisir un pseudo
+
+            if (pseudo) {
+                socket.emit('joindre-salon', pseudo); // Émet un événement pour joindre le salon avec le pseudo
+
+                // Gestion de l'envoi de messages
+                const messageForm = document.querySelector('#message-form');
+                const messageInput = document.querySelector('#message-input');
+                const messagesList = document.querySelector('#messages-list');
+
+                messageForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const message = messageInput.value;
+                    socket.emit('envoyer-message', message);
+                    messageInput.value = '';
+                });
+
+                // Réception des messages
+                socket.on('nouveau-message', (data) => {
+                    const messageItem = document.createElement('li');
+                    messageItem.textContent = `${data.pseudo}: ${data.message}`;
+                    messagesList.appendChild(messageItem);
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>La parole à tous</h1>
+    <ul id="messages-list"></ul>
+    <form id="message-form">
+        <input id="message-input" type="text" placeholder="Écrivez votre message" />
+        <button type="submit">Envoyer</button>
+    </form>
+</body>
+</html> -->

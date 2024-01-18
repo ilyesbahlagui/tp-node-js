@@ -1,0 +1,76 @@
+html
+  head
+    title=title
+    style.
+
+    style.
+      /* Styles CSS */
+      body {
+        background-color: #f0f0f0;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start; 
+        height: 100vh;
+      }
+      h1 {
+        color: #333;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      .table-container {
+        margin-top: 20px; 
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        font-family: Arial, sans-serif;
+      }
+      th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+      th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+      }
+        .lien {
+          margin-top: 20px;
+          text-align: right!important; 
+      }
+
+
+
+  body
+    .container
+      h1=titre
+      img(src=urlImage, alt="Image")
+
+
+      .table-container
+        .lien
+        a(href="/plats/ajouter") Ajouter un plat
+
+        table
+          thead
+            tr
+              th ID
+              th Nom
+              th Prix
+              th Action
+          tbody
+            each item in items 
+              tr
+                td= item.id
+                td= item.name
+                td= item.price
+                td
+                  a(href=`/plats/editer/${item.id}`) Éditer
+                  |  /
+                  a(href=`/plats/supprimer/${item.id}`) Supprimer

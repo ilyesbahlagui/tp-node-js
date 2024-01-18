@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  restaurant-bdd:   
+    build: ./restaurant-db
+    image: r-bdd
+    container_name: mysql-bdd-restaurant
+    networks:
+      - restaurant-network
+    volumes:
+      - restaurant-bdd-data:/var/lib/mysql
+    ports:
+      - "9000:3306"
+networks:
+  restaurant-network:
+volumes:
+  restaurant-bdd-data:

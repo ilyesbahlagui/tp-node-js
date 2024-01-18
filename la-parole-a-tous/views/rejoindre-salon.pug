@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title La parole a tous
+    script(src="http://localhost:8000/socket.io/socket.io.js")
+    script(src="js/rejoindre-salon.js")
+   
+  body
+    h1 Rejoindre le salon
+    form(id="pseudo-form")
+      label(for="pseudo") Pseudo :
+      input(type="text", id="pseudo", name="pseudo")
+      input(type="submit", value="Rejoindre le salon")
+
+
